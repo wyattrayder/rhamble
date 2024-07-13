@@ -6,9 +6,21 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+// Vuetify
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+const vuetify = createVuetify({
+  components,
+  directives,
+})
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,9 +40,12 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebase);
 
+
+
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(vuetify)
 
 app.mount('#app')

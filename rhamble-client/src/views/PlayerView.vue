@@ -3,7 +3,10 @@
 
 <template>
   <main>
-    <VBtn>Hello</VBtn>
-    Hewwo
+    
   </main>
 </template>
+
+<style scoped>
+
+</style>
